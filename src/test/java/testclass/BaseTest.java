@@ -15,7 +15,7 @@ import utility.ConfigReader;
 
 public class BaseTest {
 	
-	static WebDriver driver ;
+	public static WebDriver driver ;
 	HomePage homepage;
 	
 	ProductPage productpage;
