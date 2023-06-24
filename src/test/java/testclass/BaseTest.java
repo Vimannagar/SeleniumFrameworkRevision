@@ -16,9 +16,9 @@ import utility.ConfigReader;
 public class BaseTest {
 	
 	public static WebDriver driver ;
-	HomePage homepage;
+	public HomePage homepage;
 	
-	ProductPage productpage;
+	public ProductPage productpage;
 	@BeforeSuite
 	public void initBrowser() throws IOException
 	{

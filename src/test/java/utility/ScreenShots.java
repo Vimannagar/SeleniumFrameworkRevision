@@ -12,7 +12,7 @@ import org.openqa.selenium.io.FileHandler;
 public class ScreenShots {
 	
 	
-	public void captureScreenshot(WebDriver driver, String filename) throws IOException
+	public String captureScreenshot(WebDriver driver, String filename) throws IOException
 	{
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		
@@ -25,6 +25,8 @@ public class ScreenShots {
 		File destinationpath = new File(path);
 		
 		FileHandler.copy(screenshot, destinationpath);
+		
+		return path;
 	}
 	
 	public static void main(String[] args) throws IOException {

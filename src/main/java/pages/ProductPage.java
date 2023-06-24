@@ -27,7 +27,7 @@ public class ProductPage {
 	List<WebElement> productcard;
 	
 	
-	@FindBy(xpath = "//*[text()='AMRUT INDIAN SINGLE MALT WHISKY EXCLUSIVE EDITION']/parent::a")
+	@FindBy(xpath = "//*[text()='AMRUT INDIAN SINGLE MALT WHISKY EXCLUSIVE EDITION123']/parent::a")
 	private WebElement product;
 	
 	@FindBy(xpath = "//*[text()='RESET']")
@@ -45,7 +45,7 @@ public class ProductPage {
 		
 		PageFactory.initElements(driver, this);
 		
-		wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		
 	}
 	

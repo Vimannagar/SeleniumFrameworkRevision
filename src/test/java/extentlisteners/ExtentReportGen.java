@@ -15,7 +15,7 @@ public class ExtentReportGen {
 		
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter(file);
 		
-		reporter.config().setTheme(Theme.DARK);
+		reporter.config().setTheme(Theme.STANDARD);
 		
 		reporter.config().setReportName("Revision Report");
 		
