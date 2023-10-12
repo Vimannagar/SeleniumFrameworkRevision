@@ -27,7 +27,7 @@ public class ProductPage {
 	List<WebElement> productcard;
 	
 	
-	@FindBy(xpath = "//*[text()='AMRUT INDIAN SINGLE MALT WHISKY EXCLUSIVE EDITION']/parent::a")
+	@FindBy(xpath = "//*[text()='AMRUT INDIAN SINGLE MALT WHISKY EXCLUSIVE EDITION']/parent::a123")
 	private WebElement product;
 	
 	@FindBy(xpath = "//*[text()='RESET']")

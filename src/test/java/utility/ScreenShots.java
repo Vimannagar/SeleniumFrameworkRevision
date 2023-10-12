@@ -1,8 +1,11 @@
 package utility;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Base64;
 
+import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,40 +21,45 @@ public class ScreenShots {
 		
 		File screenshot = ts.getScreenshotAs(OutputType.FILE);
 		
-//		String path = "F:\\Desktop\\VimanNagar\\May 21\\SeleniumBasicsRevision\\screenshots\\amazon.png";
+		String path = "F:\\Desktop\\VimanNagar\\May 21\\SeleniumBasicsRevision\\screenshots\\amazon.png";
 		
 		
-		String path = System.getProperty("user.dir")+"\\screenshots\\"+filename+".png";
 		File destinationpath = new File(path);
+		
+
 		
 		FileHandler.copy(screenshot, destinationpath);
 		
-		return path;
+		byte[] byteArray = IOUtils.toByteArray(new FileInputStream(path));
+		
+		return Base64.getEncoder().encodeToString(byteArray);
 	}
 	
 	public static void main(String[] args) throws IOException {
 		
-	WebDriver driver = new ChromeDriver();
+//	WebDriver driver = new ChromeDriver();
+//	
+//	
+//	driver.manage().window().maximize();
+//	
+//	driver.get("https://www.amazon.in/");
+//	
+//	TakesScreenshot ts = (TakesScreenshot)driver;
+//	
+//	File screenshot = ts.getScreenshotAs(OutputType.FILE);
+//	
+////	String path = "F:\\Desktop\\VimanNagar\\May 21\\SeleniumBasicsRevision\\screenshots\\amazon.png";
+//	
+//	
+//	String path = System.getProperty("user.dir")+"\\screenshots\\testimage.png";
+//	File destinationpath = new File(path);
+//	
+//	FileHandler.copy(screenshot, destinationpath);
 	
 	
-	driver.manage().window().maximize();
+	File path1 = new File(".//screenshots//.png");
 	
-	driver.get("https://www.amazon.in/");
-	
-	TakesScreenshot ts = (TakesScreenshot)driver;
-	
-	File screenshot = ts.getScreenshotAs(OutputType.FILE);
-	
-//	String path = "F:\\Desktop\\VimanNagar\\May 21\\SeleniumBasicsRevision\\screenshots\\amazon.png";
-	
-	
-	String path = System.getProperty("user.dir")+"\\screenshots\\testimage.png";
-	File destinationpath = new File(path);
-	
-	FileHandler.copy(screenshot, destinationpath);
-	
-	
-		
+	System.out.println(path1);
 		
 		
 	}

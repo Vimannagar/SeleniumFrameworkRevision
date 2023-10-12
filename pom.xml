@@ -11,11 +11,13 @@
   
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.9.1</version>
+    <version>4.14.0</version>
 </dependency>
+
 
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
@@ -30,6 +32,12 @@
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>4.0.9</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.13.0</version>
 </dependency>
 
   

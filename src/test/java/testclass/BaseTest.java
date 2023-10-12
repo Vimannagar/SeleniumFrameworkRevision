@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -20,7 +21,7 @@ public class BaseTest {
 	
 	public ProductPage productpage;
 	@BeforeSuite
-	public void initBrowser() throws IOException
+	public void initBrowser(ITestContext ctx) throws IOException
 	{
 		ConfigReader cr = new ConfigReader();
 		String browsername = cr.readConfig("browser");
@@ -32,7 +33,9 @@ public class BaseTest {
 		{
 			driver = new FirefoxDriver();
 		}
-			
+		 String testName = ctx.getCurrentXmlTest().getName();
+		 
+		 System.out.println("Test name is "+testName);
 		driver.manage().window().maximize();
 		
 		

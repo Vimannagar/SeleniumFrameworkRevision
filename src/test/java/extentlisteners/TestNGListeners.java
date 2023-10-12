@@ -43,7 +43,9 @@ public static	ExtentTest test;
 		
 		try {
 			
-			test.addScreenCaptureFromPath(scr.captureScreenshot(driver, result.getName()));
+//			test.addScreenCaptureFromPath(scr.captureScreenshot(driver, result.getName()));
+			test.addScreenCaptureFromBase64String(scr.captureScreenshot(driver, result.getName()));
+	
 			
 		} catch (IOException e) {
 			System.out.println("Exception arrived while taking screenshot");
