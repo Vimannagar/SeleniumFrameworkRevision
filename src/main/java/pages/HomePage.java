@@ -1,9 +1,13 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 	
@@ -13,7 +17,12 @@ public class HomePage {
 	@FindBy(xpath = "//*[text()='Single Malt']")
 	private WebElement singlemalt;
 	
+	@FindBy(xpath = "//*[@id='onesignal-slidedown-cancel-button']")
+	private WebElement imiss;
+	
 	private WebDriver driver;
+	
+	private WebDriverWait wait;
 	
 	
 	public HomePage(WebDriver driver)
@@ -22,10 +31,16 @@ public class HomePage {
 		
 		this.driver = driver;
 		
+		wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		
 	}
 	
 	
 	public void clickOnSpirit() {
+		
+		wait.until(ExpectedConditions.visibilityOf(imiss));
+		imiss.click();
+		
 		spirit.click();
 	}
 	
