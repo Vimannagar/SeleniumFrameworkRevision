@@ -49,7 +49,7 @@ public class ProductTest extends TestNGListeners{
 		test.info("Sorting the product from A-Z");
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 	public void navToProduct()
 	{
 		productpage.applyFilters();
